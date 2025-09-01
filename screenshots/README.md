@@ -21,12 +21,12 @@ Docker Desktop:
 ### `/screeenshots/n8n/`
 Capturas del flujo de trabajo:
 
-![Vista general del workflow](/screeenshots/n8n/n8n_workflow_overview.png)
+![Vista general del workflow](/screenshots/n8n/n8n_workflow_overview.png)
 
 ### `/screeenshots/chatbot-demo/`
 Demostraciones del chatbot completo:
 
-![Consulta de investigación](/screeenshots/chatbot-demo/chatbot_research_query.png)
+![Consulta de investigación](/screenshots/chatbot-demo/chatbot_research_query.png)
 
 ## 🎯 Propósito
 
