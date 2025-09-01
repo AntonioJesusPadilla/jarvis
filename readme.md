@@ -248,18 +248,12 @@ DEBUG=true
 
 ### 🎨 Frontend
 - Interfaz principal del chat
-- Modo oscuro/claro
-- Diseño responsive
 
 ### 🚀 Backend  
 - Documentación automática FastAPI
-- Respuestas de endpoints
-- Logs del sistema
 
 ### 🤖 Chatbot en Acción
 - Conversaciones ejemplo
-- Respuestas de investigación
-- Flujo completo usuario-sistema
 
 ---
 
