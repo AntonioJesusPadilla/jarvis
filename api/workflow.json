@@ -1,0 +1,95 @@
+{
+  "name": "AI Agent con Gemini y Google Search",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ai-agent",
+        "options": {}
+      },
+      "id": "1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "ai-agent-webhook"
+    },
+    {
+      "parameters": {
+        "agentType": "chat",
+        "chatModel": {
+          "model": "googleGeminiPro", 
+          "temperature": 0.7
+        },
+        "memory": {
+          "memoryType": "buffer",
+          "inputKey": "query",
+          "outputKey": "response"
+        },
+        "tools": [
+          {
+            "name": "Google Search",
+            "nodeId": "3"
+          }
+        ]
+      },
+      "id": "2",
+      "name": "AI Agent",
+      "type": "n8n-nodes-base.aiAgent",
+      "typeVersion": 1,
+      "position": [550, 300]
+    },
+    {
+      "parameters": {
+        "searchText": "={{$json[\"query\"]}}",
+        "options": {}
+      },
+      "id": "3",
+      "name": "Google Search",
+      "type": "n8n-nodes-base.googleSearch",
+      "typeVersion": 1,
+      "position": [550, 500],
+      "credentials": {
+        "googleCustomSearchApi": {
+          "id": "YOUR_GOOGLE_SEARCH_CREDENTIAL_ID",
+          "name": "Google Search API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "responseMode": "onReceived",
+        "responseData": "={{$json[\"response\"]}}"
+      },
+      "id": "4",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.webhookResponse",
+      "typeVersion": 1,
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

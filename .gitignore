@@ -1,0 +1,102 @@
+# === JARVIS PROJECT GITIGNORE ===
+# Autor: Antonio Jesús Padilla
+
+# Archivos de entorno y configuración sensible
+.env
+.env.local
+.env.production
+.env.development
+config.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# FastAPI / Uvicorn
+*.log
+logs/
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# Node.js (Frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Next.js
+.next/
+out/
+build/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Temporales y caches
+.cache/
+*.tmp
+*.temp
+
+# Base de datos y archivos de estado
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos de respaldo
+*.bak
+*.backup
+
+# Certificados y claves
+*.pem
+*.key
+*.crt
+*.cert
+
+# Archivos comprimidos temporales
+*.zip
+*.tar.gz
+*.rar
+
+# Screenshots están incluidas en el repositorio
+# pero se pueden excluir versiones específicas si es necesario
+# screenshots/temp/

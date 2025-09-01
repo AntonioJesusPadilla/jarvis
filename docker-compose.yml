@@ -1,0 +1,31 @@
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: unless-stopped
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PROTOCOL=http
+      - N8N_PORT=5678
+
+  fastapi:
+    build: ./api
+    container_name: fastapi-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+    depends_on:
+      - n8n
+    environment:
+      # Variable de entorno para que FastAPI sepa la URL de n8n
+      - N8N_URL=http://n8n:5678
+
+volumes:
+  n8n_data:
