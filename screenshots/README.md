@@ -4,22 +4,22 @@ Esta carpeta contiene capturas de pantalla y documentación visual del proyecto 
 
 ## 📁 Organización
 
-### `frontend/`
+### `/screeenshots/frontend/`
 Capturas del interfaz de usuario (Next.js):
 - `frontend_landing_dark_mode.png` - Pantalla inicial modo oscuro
 
-### `backend/`
+### `/screeenshots/backend/`
 Capturas de la API (FastAPI):
 - `backend_swagger_overview.png` - Documentación Swagger principal
 
 Docker Desktop:
 - `docker_desktop_jarvis.png` - Docker Desktop Jarvis running
 
-### `n8n/`
+### `/screeenshots/n8n/`
 Capturas del flujo de trabajo:
 - `n8n_workflow_overview.png` - Vista general del workflow
 
-### `chatbot-demo/`
+### `/screeenshots/chatbot-demo/`
 Demostraciones del chatbot completo:
 - `chatbot_research_query.png` - Consulta de investigación
 
